@@ -1,0 +1,22 @@
+﻿@section style{
+    <style>
+        h1 {
+            background-color: black;
+            color: white
+        }
+    </style>
+}
+
+@section script{
+    <script>
+        $(document).ready(function(){
+            $("#boton").click(function(){
+                $("#mensaje").text("--Esto es un mensaje en la Home--")
+            })
+        })
+    </script> 
+}
+<h1 >Home</h1>
+<hr />
+<button class="btn btn-outline-dark" id="boton">Escribir mensaje</button>
+<p id="mensaje"></p>

@@ -1,0 +1,32 @@
+﻿@model List<Hospital>
+@section style{
+    <style>
+        table{
+            width: 50%;
+            text-align:center;
+            margin: auto
+        }
+    </style>
+}
+<h1>HOSPITALES</h1>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Hospital hospital in Model)
+        {
+            <tr>
+                <td>@hospital.Nombre</td>
+                <td>@hospital.Direccion</td>
+                <td>@hospital.Telefono</td>
+            </tr>            
+        }
+    </tbody>
+</table>
+
