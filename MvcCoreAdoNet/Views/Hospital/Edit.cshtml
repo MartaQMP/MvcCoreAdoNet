@@ -1,0 +1,26 @@
+﻿@section style{
+    <style>
+        form{
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+}
+
+@model Hospital
+
+<form method="post">
+    <label>Id</label>
+    <input type="text" name="idhospital" value="@Model.IdHospital" class="form-control" disabled />
+    <label>Nombre</label>
+    <input type="text" name="nombre" value="@Model.Nombre" class="form-control" />
+    <label>Dirección</label>
+    <input type="text" name="direccion" value="@Model.Direccion" class="form-control" />
+    <label>Teléfono</label>
+    <input type="text" name="telefono" value="@Model.Telefono" class="form-control" />
+    <label>Camas</label>
+    <input type="text" name="camas" value="@Model.Camas" class="form-control" />
+    <button class="btn btn-warning">Update</button>
+</form>
+
+<h2 style="color:fuchsia"> @ViewData["MENSAJE"]</h2> 

@@ -1,0 +1,27 @@
+﻿@section style{
+    <style>
+        form {
+            width: 50%;
+            margin: auto
+        }
+    </style>
+}
+<h1>Create Hospital</h1>
+
+<form method="post">
+    <label>Id</label>
+    <input type="text" name="idhospital" class="form-control" />
+    <label>Nombre</label>
+    <input type="text" name="nombre"  class="form-control" />
+    <label>Dirección</label>
+    <input type="text" name="direccion" class="form-control"/>
+    <label>Teléfono</label>
+    <input type="text" name="telefono"class="form-control" />
+    <label>Camas</label>
+    <input type="text" name="camas" class="form-control" />
+    <button class="btn btn-info">Insertar</button>
+</form>
+
+<h2 style="color:blue"> @ViewData["MENSAJE"]</h2> 
+<a>@Html.ActionLink("Index", "Index", "Hospital")
+</a>

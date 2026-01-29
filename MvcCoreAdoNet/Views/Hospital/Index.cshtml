@@ -6,9 +6,14 @@
             text-align:center;
             margin: auto
         }
+        a {
+            margin:auto
+        }
     </style>
 }
 <h1>HOSPITALES</h1>
+<hr />
+<a>@Html.ActionLink("Create", "Create", "Hospital", null, new{@class = "btn btn-danger"})</a>
 <hr />
 <table class="table table-striped">
     <thead>
@@ -27,6 +32,8 @@
                 <td>@hospital.Telefono</td>
                 <td>
                     @Html.ActionLink("Detalles", "Detalles", "Hospital", new {idHospital = hospital.IdHospital}, new {@class = "btn btn-success"})
+                    @Html.ActionLink("Edit", "Edit", "Hospital", new {id = hospital.IdHospital}, new {@class = "btn btn-warning"})
+                    @Html.ActionLink("Delete", "Delete", "Hospital", new {id = hospital.IdHospital}, new {@class = "btn btn-danger"})
                     </td>
             </tr>            
         }
