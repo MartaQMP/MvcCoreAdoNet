@@ -1,7 +1,25 @@
-﻿@model List<Empleado>
+﻿@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+        table {
+            margin: auto;
+            text-align: center;
+            width: 75%;
+        }
+    </style>
+}
+@model List<Empleado>
 
 <h1>Empleados Linq To SQL</h1>
-
+<br />
 <table class="table table-striped">
     <thead>
         <tr>
@@ -18,7 +36,7 @@
                 <td>@empleado.Apellido</td>
                 <td>@empleado.Oficio</td>
                 <td>@empleado.Salario</td>
-                <td><a asp-controller="Empleado" asp-action="Details" asp-route-id="@empleado.IdEmpleado" class="btn btn-success">Detalles</a></td>
+                <td><a asp-controller="Empleado" asp-action="Details" asp-route-id="@empleado.IdEmpleado" class="btn btn-outline-dark">Detalles</a></td>
             </tr>
         }
     </tbody>

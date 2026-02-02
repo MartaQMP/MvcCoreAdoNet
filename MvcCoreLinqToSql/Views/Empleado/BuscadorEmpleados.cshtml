@@ -1,0 +1,64 @@
+﻿@section style{
+    <style>
+        h1{
+            background-color: black;
+            color: white; 
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+        form{
+            width: 50%;
+            margin:auto;
+            text-align: center;
+        }
+        table{
+            margin:auto;
+            text-align:center;
+            width: 75%
+        }
+    </style>
+}
+@model List<Empleado>
+
+<h1>Buscador Empleados Linq</h1>
+<br />
+
+<form method="post">
+    <label class="form-label">Introduce un oficio:</label>
+    <input class="form-control" type="text" name="oficio"/>
+    <label class="form-label">Introduce un salario:</label>
+    <input class="form-control" type="text" name="salario"/>
+    <br />
+    <button class="btn btn-outline-dark">Buscar empleados</button>
+</form>
+
+<hr />
+
+@if(Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Oficio</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Empleado empleado in Model)
+            {
+                <tr>
+                    <td>@empleado.Apellido</td>
+                    <td>@empleado.Oficio</td>
+                    <td>@empleado.Salario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}else
+{
+    <h4>@ViewBag.Mensaje</h4>
+}

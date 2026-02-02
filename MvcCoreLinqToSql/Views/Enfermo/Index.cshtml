@@ -1,0 +1,56 @@
+﻿@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+            width: 75%
+        }
+    </style>
+}
+@model List<Enfermo>
+
+<h1>Enfermos</h1>
+<hr />
+@if(Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Inscripcion</th>
+                <th>Apellido</th>
+                <th>Direccion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Enfermo enfermo in Model)
+            {
+                <tr>
+                    <td>@enfermo.Inscripcion</td>
+                    <td>@enfermo.Apellido</td>
+                    <td>@enfermo.Direccion</td>
+                    <td>
+                        <a asp-asp-controller="Enfermo" asp-action="Details" asp-route-inscripcion="@enfermo.Inscripcion" class="btn btn-outline-dark">Detalles</a>
+                        <a asp-asp-controller="Enfermo" asp-action="Delete" asp-route-inscripcion="@enfermo.Inscripcion" class="btn btn-outline-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}else
+{
+    <h4>
+        @ViewBag.Mensaje
+    </h4>
+}
+

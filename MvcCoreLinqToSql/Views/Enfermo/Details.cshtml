@@ -1,0 +1,29 @@
+﻿@section style {
+    <style>
+        ul{
+            margin:auto;
+            text-align: center;
+            width: 50%
+        }
+    </style>
+}
+@model Enfermo
+
+<h1>Detalles Enfermo</h1>
+<br />
+@if(Model != null)
+{
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Inscripcion: </strong>@Model.Inscripcion</li>
+        <li class="list-group-item"><strong>Apellido: </strong>: @Model.Apellido</li>
+        <li class="list-group-item"><strong>Direccion: </strong>@Model.Direccion</li>
+        <li class="list-group-item"><strong>Fecha Nacimiento: </strong>@Model.Fecha_Nac</li>
+        <li class="list-group-item"><strong>NNS: </strong>@Model.NSS</li>
+    </ul>
+}else
+{
+    <h4>
+        @ViewBag.Mensaje
+    </h4>
+}
+

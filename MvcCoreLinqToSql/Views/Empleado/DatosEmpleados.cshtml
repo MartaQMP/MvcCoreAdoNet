@@ -1,0 +1,95 @@
+﻿@section style {
+    <style>
+        form{
+            width: 50%;
+            margin:auto;
+            text-align:center
+        }
+
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+        table {
+            margin: auto;
+            text-align: center;
+            width: 75%;
+        }
+        ul{
+            margin:auto;
+            width:50%;
+        }
+        h4{
+            text-align:center
+        }
+    </style>
+}
+@model ResumenEmpleados
+@{
+    List<string> oficiosList = ViewBag.Oficios as List<string>;
+}
+
+<h1>Resumen Empleados</h1>
+<hr />
+<form method="post">
+    <label class="form-label">Introduce el oficio:</label>
+    <select name="oficio" class="form-select">
+        @foreach (string oficio in oficiosList)
+            {
+                <option>@oficio</option>
+            }
+    </select>
+    <br />
+    <button class="btn btn-outline-dark">Buscar empleados</button>
+</form>
+<hr />
+@if(Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Personas</th>
+                <th>Media Salarial</th>
+                <th>Maximo Salarial</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Personas</td>
+                <td>@Model.MediaSalarial</td>
+                <td>@Model.MaximoSalario</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    @if(Model.Empleados != null)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Apellido</th>
+                    <th>Oficio</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Empleado empleado in Model.Empleados)
+                {
+                    <tr>
+                        <td>@empleado.Apellido</td>
+                        <td>@empleado.Oficio</td>
+                        <td>@empleado.Salario</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }else
+    {
+        <h4>No existen empleados en ese oficio</h4>
+    }
+}
