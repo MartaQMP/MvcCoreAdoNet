@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="../MvcPracticaFinalPlantilla/MvcPracticaFinalPlantilla.csproj" Id="70d7f7a9-0cf8-4e23-a882-574f4a8673e9" />
   <Project Path="MvcCoreAdoNet/MvcCoreAdoNet.csproj" />
   <Project Path="MvcCoreCrudDepartamentosAdo/MvcCoreCrudDepartamentosAdo.csproj" Id="3e97d7d2-7453-4374-b6ce-02cc0d5d9f06" />
   <Project Path="MvcCoreLinqToSql/MvcCoreLinqToSql.csproj" Id="e5b19c62-d73f-48a1-bacb-42f867cc7349" />
+  <Project Path="MvcPracticaFinalPlantilla/MvcPracticaFinalPlantilla.csproj" />
 </Solution>
