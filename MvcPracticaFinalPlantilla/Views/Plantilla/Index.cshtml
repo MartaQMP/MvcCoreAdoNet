@@ -1,0 +1,52 @@
+﻿@model List<Plantilla>
+@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+            width: 75%;
+        }
+    </style>
+}
+<h1>Plantilla</h1>
+<hr />
+@if(Model != null){
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Apellido</th>
+            <th>Funcion</th>
+            <th>Salario</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Plantilla pla in Model)
+        {
+            <tr>
+                <td>@pla.Apellido</td>
+                <td>@pla.Funcion</td>
+                <td>@pla.Salario</td>
+                <td>
+                   <a asp-controller="Plantilla" asp-action="Details" asp-route-empleado_no="@pla.EmpleadoNo" class="btn btn-outline-dark">Detalles</a>
+                   <a asp-controller="Plantilla" asp-action="Delete" asp-route-empleado_no="@pla.EmpleadoNo" class="btn btn-outline-danger">Eliminar</a>
+                   <a asp-controller="Plantilla" asp-action="Update" asp-route-empleado_no="@pla.EmpleadoNo" class="btn btn-outline-warning">Modificar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}else
+{
+    <h4>@ViewBag.Mensaje</h4>
+}

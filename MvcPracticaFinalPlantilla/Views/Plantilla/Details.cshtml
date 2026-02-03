@@ -1,0 +1,40 @@
+﻿@model Plantilla
+@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+        ul {
+            width: 20%;
+            margin: auto !important;
+        }
+        div{
+            width: 20%; 
+            margin: auto
+        }
+
+    </style>
+}
+
+<h1>Detalles</h1>
+<hr />
+<ul class ="list-group-flush">
+    <li class="list-group-item"><strong>Codigo de hospital: </strong>@Model.HospitalCod </li>
+    <li class="list-group-item"><strong>Codigo de sala: </strong>@Model.SalaCod </li>
+    <li class="list-group-item"><strong>Numero de empleado: </strong>@Model.EmpleadoNo </li>
+    <li class="list-group-item"><strong>Apellido: </strong>@Model.Apellido </li>
+    <li class="list-group-item"><strong>Funcion: </strong>@Model.Funcion </li>
+    <li class="list-group-item"><strong>Salario: </strong>@Model.Salario </li>
+</ul>
+<br />
+<div>
+    <a asp-controller="Plantilla" asp-action="Index" class="btn btn-outline-dark">
+        Volver al Inicio
+    </a>
+</div>

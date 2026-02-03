@@ -1,0 +1,89 @@
+﻿@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+
+        form {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+            width: 75%
+        }
+    </style>
+}
+@model ResumenPlantilla
+@{
+    List<string> funciones = ViewBag.Funciones as List<string>;
+}
+
+<h1>Buscador Plantilla Linq</h1>
+<br />
+
+<form method="post">
+    <label class="form-label">Selecciona la funcion:</label>
+    <select name="funcion" class="form-select">
+        @foreach (string funcion in funciones)
+        {
+            <option>@funcion</option>
+        }
+    </select>
+    <br />
+    <button class="btn btn-outline-dark">Buscar plantilla</button>
+</form>
+<hr />
+@if (Model != null)
+{
+    <table class= "table table-bordered" >
+        <thead>
+            <tr>
+                <th> Personas </th>
+                <th> Media Salarial </th>
+                <th> Maximo Salarial </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> @Model.Personas </td>
+                <td> @Model.MediaSalarial </td>
+                <td> @Model.MaximoSalario </td>
+            </tr >
+        </tbody>
+    </table>
+    <br/>
+    @if(Model.Plantilla != null){
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Apellido</th>
+                    <th>Funcion</th>
+                    <th>Salario</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Plantilla pla in Model.Plantilla)
+                {
+                    <tr>
+                        <td>@pla.Apellido</td>
+                        <td>@pla.Funcion</td>
+                        <td>@pla.Salario</td>
+                        <td>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

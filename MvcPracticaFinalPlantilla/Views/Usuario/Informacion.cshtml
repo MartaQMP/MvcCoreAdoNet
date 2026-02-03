@@ -1,0 +1,38 @@
+﻿@model InformacionUsuario
+@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+
+
+    </style>
+}
+
+<h1>Detalles</h1>
+<hr />
+<ul class="list-group">
+    <li class="list-group-item"><strong>Nombre: </strong>@Model.Nombre </li>
+    <li class="list-group-item"><strong>Apellidos: </strong>@Model.Apellidos </li>
+    <li class="list-group-item"><strong>Email: </strong>@Model.Email </li>
+    <li class="list-group-item"><strong>Actividad: </strong>@Model.Actividad </li>
+    <li class="list-group-item"><strong>Curso: </strong>@Model.Curso </li>
+    <li class="list-group-item"><strong>Fecha Inscripcion: </strong>@Model.Fecha </li>
+    @if(Model.Capitan == false)
+    {
+        <li class="list-group-item"><strong>Quiere ser capitan: </strong>No</li>
+    }else
+    {
+        <li class="list-group-item"><strong>Quiere ser capitan: </strong>Sí</li>
+    }
+</ul>
+<br />
+<a asp-controller="Usuario" asp-action="Index" class="btn btn-outline-dark">
+    Volver a los usuarios
+</a>

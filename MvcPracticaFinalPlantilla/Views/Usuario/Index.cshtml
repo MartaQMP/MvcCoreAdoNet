@@ -1,0 +1,61 @@
+﻿@model List<Usuario>
+@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+            width: 75%;
+        }
+        img{
+            width: 75px
+        }
+    </style>
+}
+<h1>Usuarios</h1>
+<hr />
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id Usuario</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Imagen</th>
+                <th>Id Curso</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Usuario usuario in Model)
+            {
+                <tr>
+                    <td>@usuario.IdUsuario</td>
+                    <td>@usuario.Nombre</td>
+                    <td>@usuario.Apellidos</td>
+                    <td>@usuario.Email</td>
+                    <td><img src="@usuario.Imagen" /></td>
+                    <td>@usuario.IdCurso</td>
+                    <td>
+                        <a asp-controller="Usuario" asp-action="Informacion" asp-route-idUsuario="@usuario.IdUsuario" class="btn btn-outline-dark">Informacion</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4>@ViewBag.Mensaje</h4>
+}

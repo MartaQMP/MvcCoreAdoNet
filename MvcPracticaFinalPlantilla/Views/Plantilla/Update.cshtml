@@ -1,0 +1,42 @@
+﻿@section style {
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 2px
+        }
+
+        form {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        input {
+            text-align:center
+        }
+    </style>
+}
+@model Plantilla
+
+<h1>Modificar Plantilla</h1>
+<hr />
+<form method="post">
+    <label class="form-label">Introduce un Codigo de Hospital:</label>
+    <input class="form-control" type="text" name="hospital_cod" value="@Model.HospitalCod" />
+    <label class="form-label">Introduce un Codigo de Sala:</label>
+    <input class="form-control" type="text" name="sala_cod" value="@Model.SalaCod" />
+    <label class="form-label">Introduce un Numero de Empleado:</label>
+    <input class="form-control" type="text" name="empleado_no" value="@Model.EmpleadoNo" />
+    <label class="form-label">Introduce un apellido:</label>
+    <input class="form-control" type="text" name="apellido" value="@Model.Apellido" />
+    <label class="form-label">Introduce una funcion:</label>
+    <input class="form-control" type="text" name="funcion" value="@Model.Funcion" />
+    <label class="form-label">Introduce un salario:</label>
+    <input class="form-control" type="text" name="salario" value="@Model.Salario" />
+    <br />
+    <button class="btn btn-outline-dark">Modificar Empleado Plantilla</button>
+</form>
