@@ -108,7 +108,6 @@ namespace MvcCoreLinqToSql.Repositories
                 // QUIERO ORDENADO EMPLEADOS POR SU SALARIO
                 consulta = consulta.OrderBy(z => z.Field<int>("SALARIO"));
                 int personas = consulta.Count();
-
                 int maximo = consulta.Max(z => z.Field<int>("SALARIO"));
                 double media = consulta.Average(x => x.Field<int>("SALARIO"));
                 List<Empleado> empleados = new List<Empleado>();
