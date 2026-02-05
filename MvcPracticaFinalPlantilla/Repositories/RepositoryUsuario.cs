@@ -39,7 +39,7 @@ namespace MvcPracticaFinalPlantilla.Repositories
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
             string sql = "SELECT * FROM USUARIOSTAJAMAR";
-            SqlDataAdapter ad = new SqlDataAdapter(sql, connection);
+            SqlDataAdapter ad = new SqlDataAdapter(sql, this.cn);
             this.tablaUsuarios = new DataTable();
             ad.Fill(tablaUsuarios);
         }

@@ -47,7 +47,7 @@ namespace MvcPracticaFinalPlantilla.Repositories
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
             string sql = "SELECT * FROM PLANTILLA";
-            SqlDataAdapter ad = new SqlDataAdapter(sql, connectionString);
+            SqlDataAdapter ad = new SqlDataAdapter(sql, this.cn);
             this.tablaPlantilla = new DataTable();
             ad.Fill(tablaPlantilla);
         }

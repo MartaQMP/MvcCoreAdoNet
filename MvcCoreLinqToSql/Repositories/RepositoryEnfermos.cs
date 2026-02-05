@@ -17,7 +17,7 @@ namespace MvcCoreLinqToSql.Repositories
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
             string sql = "SELECT * FROM ENFERMO";
-            SqlDataAdapter ad = new SqlDataAdapter(sql, connectionString);
+            SqlDataAdapter ad = new SqlDataAdapter(sql, this.cn);
             this.tablaEnfermos = new DataTable();
             ad.Fill(this.tablaEnfermos);
         }
